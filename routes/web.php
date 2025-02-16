@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Home', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -18,21 +18,17 @@ Route::get('/home', function () {
     return Inertia::render('Home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/categorieen', function () {
-    return Inertia::render('Categorieen');
-})->middleware(['auth', 'verified'])->name('categorieen');
-
-Route::get('/productcategorieen', function () {
-    return Inertia::render('ProductCategorieen');
-})->middleware(['auth', 'verified'])->name('productcategorieen');
-
 Route::get('/producten', function () {
-    return Inertia::render('Producten');
-})->middleware(['auth', 'verified'])->name('producten');
+    return Inertia::render('Categorieen');
+});
+
+Route::get('/subcategorieen', function () {
+    return Inertia::render(component: 'SubCategorieen');
+});
 
 Route::get('/product', function () {
-    return Inertia::render('Product');
-})->middleware(['auth', 'verified'])->name('product');
+    return Inertia::render(component: 'Product');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
