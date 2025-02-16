@@ -14,9 +14,25 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', function () {
+    return Inertia::render('Home');
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::get('/categorieen', function () {
+    return Inertia::render('Categorieen');
+})->middleware(['auth', 'verified'])->name('categorieen');
+
+Route::get('/productcategorieen', function () {
+    return Inertia::render('ProductCategorieen');
+})->middleware(['auth', 'verified'])->name('productcategorieen');
+
+Route::get('/producten', function () {
+    return Inertia::render('Producten');
+})->middleware(['auth', 'verified'])->name('producten');
+
+Route::get('/product', function () {
+    return Inertia::render('Product');
+})->middleware(['auth', 'verified'])->name('product');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
