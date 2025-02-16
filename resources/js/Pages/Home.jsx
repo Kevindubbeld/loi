@@ -1,3 +1,4 @@
+import Header from '@/Components/Header';
 import { Head } from '@inertiajs/react';
 
 export default function Home() {
@@ -5,19 +6,7 @@ export default function Home() {
         <>
             <Head title="Home" />
             <div className="container mx-auto p-4">
-                <nav className="flex justify-between items-center py-4">
-                    <div className="text-2xl font-bold text-blue-500">Homepage</div>
-                    <ul className="flex space-x-4">
-                        <li><a href="/" className="text-blue-500">Home</a></li>
-                        <li><a href="/producten" className="text-blue-500">Producten</a></li>
-                        <li><a href="#" className="text-blue-500">Aanbiedingen</a></li>
-                        <li><a href="#" className="text-blue-500">Winkelwagen</a></li>
-                        <li><a href="#" className="text-blue-500">Bestellen</a></li>
-                    </ul>
-                    <div>
-                        <a href="/account" className="text-blue-500">Account</a>
-                    </div>
-                </nav>
+                <Header />
                 <div className="flex items-center py-4 border-b">
                     <input 
                         type="text" 
