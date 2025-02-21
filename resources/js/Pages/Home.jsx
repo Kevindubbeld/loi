@@ -20,41 +20,41 @@ export default function Home() {
                     </button>
                 </div>
                 <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                    <img src="path/to/promotion-image.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                    <img src="https://www.jumbo.com/dam/inspiratie/boodschappenpakket/Boodschappenpakket-Header-2000x354-Laatste-week.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Product Promotion</h2>
-                        <p className="text-gray-600">This is the promotion text.</p>
+                        <h2 className="text-xl font-bold">MAAK KANS OP 50,- EURO GRATIS BOODSCHAPPEN</h2>
+                        <p className="text-gray-600">Bij besteding van 20,- euro of meer maakt u automatisch kans.</p>
                     </div>
                 </div>
                             
                 <div className="mt-4 flex justify-between space-x-4">
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
-                        <img src="path/to/promotion-image.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                        <img src="https://www.jumbo.com/dam/inspiratie/nieuw/PH-Nieuw.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <h2 className="text-xl font-bold">Nieuwe producten!</h2>
+                            <p className="text-gray-600">Ontdek alle 200 nieuwe producten hier</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
-                        <img src="path/to/promotion-image.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                        <img src="	https://www.jumbo.com/dam/homepage/2025/8/Gouden-Loekie-HP-visual.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <h2 className="text-xl font-bold">Stem nu mee</h2>
+                            <p className="text-gray-600">Help Mormel aan een Gouden Loeki</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
-                        <img src="path/to/promotion-image.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                        <img src="https://static.ah.nl/static/recepten/img_RAM_PRD198059_1224x900_JPG.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <h2 className="text-xl font-bold">Wat eten we vandaag?</h2>
+                            <p className="text-gray-600">Handige kook recepten</p>
                         </div>
                     </div>
                 </div>
                 <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                    <img src="path/to/promotion-image.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                    <img src="https://t3.ftcdn.net/jpg/11/42/27/12/360_F_1142271258_Oc1hZrtXs2dCKpVrYBm0e3Cnaj9NrpEc.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Product Promotion</h2>
-                        <p className="text-gray-600">This is the promotion text.</p>
+                        <h2 className="text-xl font-bold">Onverslagen blijven wij de Allergoedkoopste supermarkt online</h2>
+                        <p className="text-gray-600">Leuk voor je portomonee</p>
                     </div>
                 </div>
                 <div className="mt-4 p-4 border rounded-lg flex items-center justify-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
