@@ -17,6 +17,8 @@
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
+        <div class="container mx-auto" style="max-width: 1664px;">
         @inertia
+        </div>
     </body>
 </html>
