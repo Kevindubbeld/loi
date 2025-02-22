@@ -30,6 +30,10 @@ Route::get('/product', function () {
     return Inertia::render(component: 'Product');
 });
 
+Route::get('/onderconstructie', function () {
+    return Inertia::render('Onderconstructie');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

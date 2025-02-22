@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                             
                 <div className="mt-4 flex justify-between space-x-4">
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/producten'}>
                         <img src="https://www.jumbo.com/dam/inspiratie/nieuw/PH-Nieuw.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
                             <h2 className="text-xl font-bold">Nieuwe producten!</h2>
@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
                     <img src="https://t3.ftcdn.net/jpg/11/42/27/12/360_F_1142271258_Oc1hZrtXs2dCKpVrYBm0e3Cnaj9NrpEc.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Onverslagen blijven wij de Allergoedkoopste supermarkt online</h2>
+                        <h2 className="text-xl font-bold">Onverslagen zijn wij de Allergoedkoopste supermarkt online</h2>
                         <p className="text-gray-600">Leuk voor je portomonee</p>
                     </div>
                 </div>
