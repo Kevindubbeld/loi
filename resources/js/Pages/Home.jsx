@@ -15,7 +15,7 @@ export default function Home() {
                         <input 
                             type="text" 
                             placeholder="Zoek een product" 
-                            className="border rounded-full px-4 py-0 w-1/5"
+                            className="border rounded-full px-4 py-0 w-1/5 text-xs sm:text-sm md:text-base"
                         />
                         <button className="ml-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
