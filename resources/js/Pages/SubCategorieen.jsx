@@ -4,7 +4,7 @@ import { Head } from '@inertiajs/react';
 export default function SubCategorieen() {
     return (
         <>
-            <Head title="SubCategorieen" />
+            <Head title="SubCategorieën" />
             <div className="container mx-auto p-4">
                 <Header />
                 <div className="flex items-center py-4 border-b">
@@ -20,37 +20,37 @@ export default function SubCategorieen() {
                     </button>
                 </div>
                 <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/product'}>
-                    <img src="path/to/product-category-image.jpg" alt="Product Category" className="w-1/4 rounded-lg" />
+                    <img src="path/to/product-category-image.jpg" alt="Productcategorie" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Product Category Promotion</h2>
-                        <p className="text-gray-600">This is the product category promotion text.</p>
+                        <h2 className="text-xl font-bold">Productcategorie Promotie</h2>
+                        <p className="text-gray-600">Dit is de productcategorie promotietekst.</p>
                     </div>
                 </div>
                 <div className="mt-4 flex justify-between space-x-4">
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
-                        <img src="path/to/product-category-image.jpg" alt="Product Category" className="w-1/4 rounded-lg" />
+                        <img src="path/to/product-category-image.jpg" alt="Productcategorie" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Category Promotion</h2>
-                            <p className="text-gray-600">This is the product category promotion text.</p>
+                            <h2 className="text-xl font-bold">Productcategorie Promotie</h2>
+                            <p className="text-gray-600">Dit is de productcategorie promotietekst.</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
-                        <img src="path/to/product-category-image.jpg" alt="Product Category" className="w-1/4 rounded-lg" />
+                        <img src="path/to/product-category-image.jpg" alt="Productcategorie" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Category Promotion</h2>
-                            <p className="text-gray-600">This is the product category promotion text.</p>
+                            <h2 className="text-xl font-bold">Productcategorie Promotie</h2>
+                            <p className="text-gray-600">Dit is de productcategorie promotietekst.</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
-                        <img src="path/to/product-category-image.jpg" alt="Product Category" className="w-1/4 rounded-lg" />
+                        <img src="path/to/product-category-image.jpg" alt="Productcategorie" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Category Promotion</h2>
-                            <p className="text-gray-600">This is the product category promotion text.</p>
+                            <h2 className="text-xl font-bold">Productcategorie Promotie</h2>
+                            <p className="text-gray-600">Dit is de productcategorie promotietekst.</p>
                         </div>
                     </div>
                 </div>
-                <h1 className="text-2xl font-bold mt-4">Welcome to the ProductCategorieen page!</h1>
-                <p className="mt-4">This is the product categories page.</p>
+                <h1 className="text-2xl font-bold mt-4">Welkom op de SubCategorieën pagina!</h1>
+                <p className="mt-4">Dit is de subcategorieën pagina.</p>
             </div>
         </>
     );

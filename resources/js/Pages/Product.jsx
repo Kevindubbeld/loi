@@ -22,35 +22,35 @@ export default function Product() {
                 <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/product'}>
                     <img src="path/to/product-image.jpg" alt="Product" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Product Promotion</h2>
-                        <p className="text-gray-600">This is the product promotion text.</p>
+                        <h2 className="text-xl font-bold">Product Promotie</h2>
+                        <p className="text-gray-600">Dit is de product promotietekst.</p>
                     </div>
                 </div>
                 <div className="mt-4 flex justify-between space-x-4">
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
                         <img src="path/to/product-image.jpg" alt="Product" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the product promotion text.</p>
+                            <h2 className="text-xl font-bold">Product Promotie</h2>
+                            <p className="text-gray-600">Dit is de product promotietekst.</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
                         <img src="path/to/product-image.jpg" alt="Product" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the product promotion text.</p>
+                            <h2 className="text-xl font-bold">Product Promotie</h2>
+                            <p className="text-gray-600">Dit is de product promotietekst.</p>
                         </div>
                     </div>
                     <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/product'}>
                         <img src="path/to/product-image.jpg" alt="Product" className="w-1/4 rounded-lg" />
                         <div>
-                            <h2 className="text-xl font-bold">Product Promotion</h2>
-                            <p className="text-gray-600">This is the product promotion text.</p>
+                            <h2 className="text-xl font-bold">Product Promotie</h2>
+                            <p className="text-gray-600">Dit is de product promotietekst.</p>
                         </div>
                     </div>
                 </div>
-                <h1 className="text-2xl font-bold mt-4">Welcome to the Product page!</h1>
-                <p className="mt-4">This is the product page.</p>
+                <h1 className="text-2xl font-bold mt-4">Welkom op de Product pagina!</h1>
+                <p className="mt-4">Dit is de product pagina.</p>
             </div>
         </>
     );

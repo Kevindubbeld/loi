@@ -18,7 +18,7 @@ Route::get('/home', function () {
     return Inertia::render('Home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/producten', function () {
+Route::get('/categorieen', function () {
     return Inertia::render('Categorieen');
 });
 

@@ -23,26 +23,26 @@ export default function Home() {
                             </svg>
                         </button>
                     </div>
-                    <div className="mt-2 p-4 border rounded-lg flex items-center cursor-pointer" onClick={() => window.location.href='/producten'}>
+                    <div className="mt-2 p-4 border rounded-lg flex items-center cursor-pointer" onClick={() => window.location.href='/categorieen'}>
                         <img src="https://www.jumbo.com/dam/inspiratie/boodschappenpakket/Boodschappenpakket-Header-2000x354-Laatste-week.jpg" alt="Promotion" className="w-full rounded-lg" />
                     </div>
                                 
                     <div className="mt-0 flex justify-between space-x-0">
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/producten'}>
+                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
                             <div>
                                 <h2 className="text-xl font-bold">Robijn 4 voor 2!</h2>
                                 <p className="text-gray-600">Ongelofelijk 😉</p>
                             </div>
                             <img src="https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Seizoensaanbiedingen/SA02/Seizoen_Week_04-08_16.png" alt="Promotion" className="w-1/4 rounded-lg" />
                         </div>
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/producten'}>
+                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
                             <div>
                                 <h2 className="text-xl font-bold">Page nu 1 + 1</h2>
                                 <p className="text-gray-600">Ga je vaak naar het toilet? Dan is deze aanbieding voor jouw!</p>
                             </div>
                             <img src="https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Weekaanbiedingen/Week%2008/Weekaanbiedingen-Week-08_02.png" alt="Promotion" className="w-1/4 rounded-lg" />
                         </div>
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/producten'}>
+                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
                             <div>
                                 <h2 className="text-xl font-bold">Nog een paar gram vet nodig?</h2>
                                 <p className="text-gray-600">Eet hier veel van en je zal resultaat zien.</p>
@@ -52,7 +52,7 @@ export default function Home() {
                     </div>
                     <div className="mt-4 p-10 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
                         <div>
-                            <h2 className="text-xl font-bold">Nieuws! Wij zijn uitgekozen als allergoedkoopste online supermarkt</h2>
+                            <h2 className="text-xl font-bold">Nieuws! Wij zijn uitgekozen tot allergoedkoopste online supermarkt</h2>
                             <p className="text-gray-600">Sinds 2021 zijn wij elk jaar door de Consumentenbond uitgeroepen tot de beste en goedkoopste online supermarkt. Klik hier voor meer informatie.</p>
                         </div>
                         <img src="https://res.cloudinary.com/cb-media/image/upload/f_auto,w_auto:300:384/cmsmedia/prod/binaries/content/gallery/cbhippowebsite/klantenservice/website/afbeeldingen-nieuwe-huisstijl/bestetest.png" alt="Promotion" className="h-16 rounded-lg" />
