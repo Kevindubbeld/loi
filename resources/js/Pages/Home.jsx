@@ -19,7 +19,7 @@ export default function Home() {
                         </svg>
                     </button>
                 </div>
-                <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
+                <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
                     <img src="https://www.jumbo.com/dam/inspiratie/boodschappenpakket/Boodschappenpakket-Header-2000x354-Laatste-week.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                     <div>
                         <h2 className="text-xl font-bold">MAAK KANS OP 50,- EURO GRATIS BOODSCHAPPEN</h2>
@@ -35,14 +35,14 @@ export default function Home() {
                             <p className="text-gray-600">Ontdek alle 200 nieuwe producten hier</p>
                         </div>
                     </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
-                        <img src="	https://www.jumbo.com/dam/homepage/2025/8/Gouden-Loekie-HP-visual.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/onderconstructie'}>
+                        <img src="https://www.jumbo.com/dam/homepage/2025/8/Gouden-Loekie-HP-visual.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
                             <h2 className="text-xl font-bold">Stem nu mee</h2>
                             <p className="text-gray-600">Help Mormel aan een Gouden Loeki</p>
                         </div>
                     </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/aanbiedingen'}>
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/onderconstructie'}>
                         <img src="https://static.ah.nl/static/recepten/img_RAM_PRD198059_1224x900_JPG.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
                             <h2 className="text-xl font-bold">Wat eten we vandaag?</h2>
@@ -50,42 +50,45 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
+                <div className="mt-4 p-4 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
                     <img src="https://t3.ftcdn.net/jpg/11/42/27/12/360_F_1142271258_Oc1hZrtXs2dCKpVrYBm0e3Cnaj9NrpEc.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                     <div>
-                        <h2 className="text-xl font-bold">Onverslagen zijn wij de Allergoedkoopste supermarkt online</h2>
-                        <p className="text-gray-600">Leuk voor je portomonee</p>
+                        <h2 className="text-xl font-bold">Nieuws! Wij zijn uitgekozen tot de allergoedkoopste online supermarkt</h2>
+                        <p className="text-gray-600">Klik hier voor meer informatie</p>
                     </div>
                 </div>
-                <div className="mt-4 p-4 border rounded-lg flex items-center justify-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/aanbiedingen'}>
+                <div className="mt-4 p-4 border rounded-lg flex items-center justify-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
+                    <img src="https://img.pikbest.com/png-images/20240828/round-logos-of-facebook-instagram-and-tiktok-colored-popular-social-media-logos_10570194.png!bw700" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <p className="text-gray-600">Volg ons op Sociale media</p>
                         </div>
                     </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/aanbiedingen'}>
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
+                    <img src="https://media.istockphoto.com/id/1168518509/vector/email-marketing.jpg?s=612x612&w=0&k=20&c=1b3Ek3YbdAdPmW-KjeznqphxTLB-4NT1vK6bwfRcnI4=" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <p className="text-gray-600">Nieuwsbrief aanmelding</p>
                         </div>
                     </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/aanbiedingen'}>
+                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
+                    <img src="https://www.shutterstock.com/image-vector/support-icon-can-be-used-600nw-1887496465.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
                         <div>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                            <p className="text-gray-600">Klantenservice contactopties</p>
                         </div>
                     </div>
                 </div>
-                <footer className="mt-4 p-4 border rounded-lg flex items-center justify-center space-x-4 cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                <footer className="mt-4 p-4 border rounded-lg flex items-center justify-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                            <p className="text-gray-600">Algemene voorwaarden</p>
                     </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                            <p className="text-gray-600">Levering & verzending</p>
                     </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                            <p className="text-gray-600">Privacybeleid</p>
                     </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/aanbiedingen'}>
-                            <p className="text-gray-600">This is the promotion text.</p>
+                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
+                            <p className="text-gray-600">Onze organisatie</p>
                     </div>
                 </footer>
             </div>
