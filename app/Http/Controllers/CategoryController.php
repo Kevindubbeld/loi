@@ -12,6 +12,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Http\Requests\ListCategorieenRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\SubCategory;
 
 class CategoryController extends Controller
 {
@@ -33,6 +34,12 @@ class CategoryController extends Controller
      */
     public function show(int $id): ?array
     {
-        return DB::table('categories')->where('id', $id)->first();
+        $category = DB::table('categories')->where('id', $id)->first();
+        if ($category) {
+            $subCategories = SubCategory::with('products')->where('category_id', $id)->get();
+            $category->subcategories = $subCategories->toArray();
+            return (array) $category;
+        }
+        return null;
     }
 }

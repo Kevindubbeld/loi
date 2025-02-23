@@ -28,7 +28,7 @@ class SubCategorySeeder extends Seeder
         $huisdierenCategory = Category::where('name', 'Huisdieren')->first();
         $gezondheidEnVerzorgingCategory = Category::where('name', 'Gezondheid en Verzorging')->first();
 
-        DB::table('subcategories')->insert([
+        DB::table('sub_categories')->insert([
             [
                 'category_id' => $vleesEnVisCategory->id,
                 'name' => 'Kippenvlees',

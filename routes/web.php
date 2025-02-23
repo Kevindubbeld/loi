@@ -22,12 +22,12 @@ Route::get('/categorieen', function () {
     return Inertia::render('Categorieen');
 });
 
-Route::get('/subcategorieen', function () {
-    return Inertia::render(component: 'SubCategorieen');
+Route::get('/subcategorieen/{id}', function ($id) {
+    return Inertia::render('SubCategorieen', ['id' => $id]);
 });
 
-Route::get('/product', function () {
-    return Inertia::render(component: 'Product');
+Route::get('/product/{id}', function ($id) {
+    return Inertia::render('Product', ['id' => $id]);
 });
 
 Route::get('/onderconstructie', function () {

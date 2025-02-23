@@ -2,6 +2,8 @@ import Header from '@/Components/Header';
 import { Head, usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Footer } from '@/Components/Footer';
+import { SocialMedia } from '@/Components/SocialMedia';
 
 export default function Categorieen() {
     const [categories, setCategories] = useState([]);
@@ -25,48 +27,16 @@ export default function Categorieen() {
                 <hr className="my-2" />
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
                     {categories.map(category => (
-                        <div key={category.id} className="p-1 border rounded-lg flex flex-col items-center justify-center space-y-2 cursor-pointer text-center" onClick={() => window.location.href='/subcategorieen'}>
-                            <img src={category.image} alt={category.name} className="w-1/2 rounded-lg" />
+                        <div key={category.id} className="p-1 border rounded-lg flex flex-col items-center justify-center space-y-2 cursor-pointer text-center" onClick={() => window.location.href='/subcategorieen/' + category.id}>
+                            <img src={category.img_url} alt={category.name} className="w-1/2 rounded-lg" />
                             <div>
                                 <h2 className="text-xl font-bold">{category.name}</h2>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="mt-20 p-8 border rounded-lg flex items-center justify-center space-x-8 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
-                        <img src="https://img.pikbest.com/png-images/20240828/round-logos-of-facebook-instagram-and-tiktok-colored-popular-social-media-logos_10570194.png!bw700" alt="Promotion" className="w-1/4 rounded-lg" />
-                        <div>
-                            <p className="text-gray-600">Volg ons op Sociale media</p>
-                        </div>
-                    </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
-                        <img src="https://media.istockphoto.com/id/1168518509/vector/email-marketing.jpg?s=612x612&w=0&k=20&c=1b3Ek3YbdAdPmW-KjeznqphxTLB-4NT1vK6bwfRcnI4=" alt="Promotion" className="w-1/4 rounded-lg" />
-                        <div>
-                            <p className="text-gray-600">Nieuwsbrief aanmelding</p>
-                        </div>
-                    </div>
-                    <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/5" onClick={() => window.location.href='/onderconstructie'}>
-                        <img src="https://www.shutterstock.com/image-vector/support-icon-can-be-used-600nw-1887496465.jpg" alt="Promotion" className="w-1/4 rounded-lg" />
-                        <div>
-                            <p className="text-gray-600">Klantenservice contactopties</p>
-                        </div>
-                    </div>
-                </div>
-                <footer className="mt-2 p-1 border rounded-lg flex items-center justify-center space-x-6 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                        <p className="text-gray-600">Algemene voorwaarden</p>
-                    </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                        <p className="text-gray-600">Levering & verzending</p>
-                    </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                        <p className="text-gray-600">Privacybeleid</p>
-                    </div>
-                    <div className="flex items-center cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
-                        <p className="text-gray-600">Onze organisatie</p>
-                    </div>
-                </footer>
+                <SocialMedia />
+                <Footer />
             </div>
         </>
     );

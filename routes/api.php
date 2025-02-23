@@ -7,4 +7,5 @@ use App\Http\Requests\ListCategorieenRequest;
 
 Route::get('/api/category', [CategoryController::class, 'index']);
 Route::get('/api/category/{id}', [CategoryController::class, 'show']);
+Route::get('/api/product', [ProductController::class, 'index']);
 Route::get('/api/product/{id}', [ProductController::class, 'show']);

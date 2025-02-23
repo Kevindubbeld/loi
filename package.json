@@ -21,6 +21,7 @@
         "vite": "^6.1.1"
     },
     "dependencies": {
-        "@inertiajs/progress": "^0.1.2"
+        "@inertiajs/progress": "^0.1.2",
+        "react-router-dom": "^7.2.0"
     }
 }
