@@ -8,8 +8,7 @@ export default function Categorieen() {
     const { props } = usePage();
 
     useEffect(() => {
-        console.log("Loading categories....");
-        axios.get('/api/categories')
+        axios.get('/api/category')
             .then(response => {
                 setCategories(response.data);
             })

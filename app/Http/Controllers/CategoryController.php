@@ -12,7 +12,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Http\Requests\ListCategorieenRequest;
 
-class CategorieenController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Return the list of categories.
@@ -35,5 +35,22 @@ class CategorieenController extends Controller
             ['id' => 11, 'name' => 'Huisdieren', 'image' => 'https://d147a5vd7kzml6.cloudfront.net/img/appeltern_nl/251877/3005x2000/resize:normal/dieren_en_huisdieren_in_de_tuin.jpg'],
             ['id' => 12, 'name' => 'Gezondheid en Verzorging', 'image' => 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR68DEOqUyhc2nXghQayLmiGsPJY3w0eG4oKSQ2uI2xdhVmF2a53rQxzKXTmEyBpuG8-lgkXAyi0SmRD6TICY0ZPaGU1r_OCagEbP78wYEF7AE-t0VFObzRG2EGD0A1xWHepntLCmGOveE&usqp=CAc'],
         ];
-    }    
+    }
+
+    /**
+     * Return the details of a specific category.
+     *
+     * @param int $id
+     * @return array|null
+     */
+    public function show(int $id): ?array
+    {
+        $categories = $this->index();
+        foreach ($categories as $category) {
+            if ($category['id'] === $id) {
+                return $category;
+            }
+        }
+        return null;
+    }
 }
