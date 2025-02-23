@@ -4,45 +4,24 @@ import { Head } from '@inertiajs/react';
 export default function SubCategorieen() {
     const subcategories = [
         { id: 1, name: 'Kippenvlees', image: 'https://png.pngtree.com/png-clipart/20230812/original/pngtree-fried-chicken-icon-logo-illustration-delicious-wings-lunch-vector-picture-image_10499362.png', products: [
-            { name: 'Kipfilet', price: '€5,99', description: 'Verse kipfilet per 500g', image: 'https://www.example.com/kipfilet.jpg' },
-            { name: 'Kipdrumsticks', price: '€4,99', description: 'Verse kipdrumsticks per 500g', image: 'https://www.example.com/kipdrumsticks.jpg' },
-            { name: 'Kipdijfilet', price: '€6,99', description: 'Verse kipdijfilet per 500g', image: 'https://www.example.com/kipdijfilet.jpg' },
-            { name: 'Kipgehakt', price: '€5,49', description: 'Vers kipgehakt per 500g', image: 'https://www.example.com/kipgehakt.jpg' },
-            { name: 'Kipfilet met vel', price: '€5,99', description: 'Verse kipfilet met vel per 500g', image: 'https://www.example.com/kipfilet-met-vel.jpg' },
-            { name: 'Kipfilet zonder vel', price: '€5,99', description: 'Verse kipfilet zonder vel per 500g', image: 'https://www.example.com/kipfilet-zonder-vel.jpg' },
-            { name: 'Kipfilet gemarineerd', price: '€6,49', description: 'Verse gemarineerde kipfilet per 500g', image: 'https://www.example.com/kipfilet-gemarineerd.jpg' },
-            { name: 'Kipfilet naturel', price: '€5,99', description: 'Verse kipfilet naturel per 500g', image: 'https://www.example.com/kipfilet-naturel.jpg' }
+            { id: 1, name: 'Kipfilet', price: '€5,99', description: 'Verse kipfilet per 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/12122024_1734017700588_1734017707185_2378607000000_1.png' },
+            { id: 2, name: 'Kipdrumsticks', price: '€4,99', description: 'Verse kipdrumsticks per 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/05112024_1730820972327_1730821013982_2378613000000_1.png' },
+            { id: 3, name: 'Kipdijfilet', price: '€6,99', description: 'Verse kipdijfilet per 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/17102024_1729157646478_1729157662073_2335881000000_1.png' },
+            { id: 4, name: 'Kipgehakt', price: '€5,49', description: 'Vers kipgehakt per 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/05112024_1730820973073_1730820990171_8718452850457_1.png' },
+            { id: 5, name: 'Kipfilet gesneden', price: '€5,99', description: 'Verse kipfilet met vel per 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/30012025_1738251168101_1738251174625_2369922000000_1.png' },
+            { id: 6, name: 'Kipfilethaasjes', price: '€5,99', description: 'Kipfilethaasjes Voorgegaard 6 Stuks', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/21022025_1740151973618_1740151980651_8718452886951_1.png' },
+            { id: 7, name: 'Cordon Bleu', price: '€6,49', description: 'Scharrelkip Cordon Bleu 2 Stuks', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/05112024_1730820972141_1730820990986_8718452684144_1.png' },
+            { id: 8, name: 'Kip Shoarma', price: '€5,99', description: 'Verse Kip Shoarma Dijfilet 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/05112024_1730820973386_1730821013790_8718452850464_1.png' }
         ]},
-        { id: 2, name: 'Rundervlees', image: 'https://static.vecteezy.com/ti/gratis/vector/p1/36773245-vlees-icoon-logo-ontwerp-sjabloon-vector.jpg', products: [
-            { name: 'Rundergehakt', price: '€7,99', description: 'Vers rundergehakt per 500g', image: 'https://www.example.com/rundergehakt.jpg' },
-            { name: 'Runderbiefstuk', price: '€12,99', description: 'Verse runderbiefstuk per 500g', image: 'https://www.example.com/runderbiefstuk.jpg' },
-            { name: 'Runderstoofvlees', price: '€8,99', description: 'Vers runderstoofvlees per 500g', image: 'https://www.example.com/runderstoofvlees.jpg' },
-            { name: 'Runderrollade', price: '€14,99', description: 'Verse runderrollade per 500g', image: 'https://www.example.com/runderrollade.jpg' },
-            { name: 'Runderhamburger', price: '€6,99', description: 'Verse runderhamburger per 500g', image: 'https://www.example.com/runderhamburger.jpg' },
-            { name: 'Runderworst', price: '€5,99', description: 'Verse runderworst per 500g', image: 'https://www.example.com/runderworst.jpg' },
-            { name: 'Runderlappen', price: '€9,99', description: 'Verse runderlappen per 500g', image: 'https://www.example.com/runderlappen.jpg' },
-            { name: 'Rundersteak', price: '€11,99', description: 'Verse rundersteak per 500g', image: 'https://www.example.com/rundersteak.jpg' }
+        { id: 2, name: 'Rundervlees', image: 'https://img.freepik.com/premium-vector/rundvlees-logo-ontwerp-inspiratie-met-badges-en-vintage-stijl_139869-36.jpg?w=1480', products: [
+            { id: 1, name: 'Runderreepjes', price: '€5,65', description: 'Vers Runderreepjes ca. 300 g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/09082023_1691585002612_1691585020359_2333762000000_1.png' },
+            { id: 2, name: 'Kogelbiefstuk', price: '€8.23', description: 'Verse Kogelbiefstuk 2 Stuks ca. 270 g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/27092023_1695807348009_1695807361738_2369053000000_1.png' },
+            { id: 3, name: 'Riblap', price: '€13,42', description: 'Vers Riblap ca. 1000 g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/09082023_1691589330733_1691589342185_2378522000000_1.png' },
+            { id: 4, name: 'Rundergehakt', price: '€4.89', description: 'Verse Rundergehakt 500g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/21112024_1732217600134_1732217606321_8718452597024_1.png' },
+            { id: 5, name: 'Rundervinken', price: '€6,00', description: 'Verse Rundervinken 5 Stuks', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/05112024_1730820971593_1730820994399_8718452678549_1.png' },
+            { id: 6, name: 'Biefstuk', price: '€3,99', description: 'Verse Duitse Biefstuk 2 Stuks', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/14022024_1707873741186_1707873748959_2348881000000_1.png' },
+            { id: 7, name: 'Entrecote', price: '€7,54', description: 'Fijnproevers Entrecote Gerijpt ca. 210 g', image: 'https://www.jumbo.com/dam-images/fit-in/360x360/Products/12122024_1734014884918_1734014891120_2336075000000_1.png' },
         ]},
-        { id: 3, name: 'Schapenvlees', image: 'https://static.vecteezy.com/ti/gratis/vector/p1/46330418-lam-boerderij-schapen-vlees-slagerij-winkel-wijnoogst-logo-vector.jpg', products: [
-            { name: 'Lamskotelet', price: '€9,99', description: 'Verse lamskoteletten per 500g', image: 'https://www.example.com/lamskotelet.jpg' },
-            { name: 'Lamsbout', price: '€14,99', description: 'Verse lamsbout per 500g', image: 'https://www.example.com/lamsbout.jpg' },
-            { name: 'Lamsgehakt', price: '€8,99', description: 'Vers lamsgehakt per 500g', image: 'https://www.example.com/lamsgehakt.jpg' },
-            { name: 'Lamsrack', price: '€19,99', description: 'Verse lamsrack per 500g', image: 'https://www.example.com/lamsrack.jpg' },
-            { name: 'Lamsfilet', price: '€12,99', description: 'Verse lamsfilet per 500g', image: 'https://www.example.com/lamsfilet.jpg' },
-            { name: 'Lamsrib', price: '€10,99', description: 'Verse lamsrib per 500g', image: 'https://www.example.com/lamsrib.jpg' },
-            { name: 'Lamsbout met been', price: '€15,99', description: 'Verse lamsbout met been per 500g', image: 'https://www.example.com/lamsbout-met-been.jpg' },
-            { name: 'Lamsbout zonder been', price: '€14,99', description: 'Verse lamsbout zonder been per 500g', image: 'https://www.example.com/lamsbout-zonder-been.jpg' }
-        ]},
-        { id: 4, name: 'Varkensvlees', image: 'https://img.freepik.com/premium-vector/varkensvlees-vintage-logo-sjabloon-retro-poster-voor-slagerij-boerderij-vlees-bedrijf-vector-illustratie_939711-3802.jpg', products: [
-            { name: 'Varkenshaas', price: '€6,99', description: 'Verse varkenshaas per 500g', image: 'https://www.example.com/varkenshaas.jpg' },
-            { name: 'Varkenskarbonade', price: '€5,99', description: 'Verse varkenskarbonade per 500g', image: 'https://www.example.com/varkenskarbonade.jpg' },
-            { name: 'Varkensfilet', price: '€7,99', description: 'Verse varkensfilet per 500g', image: 'https://www.example.com/varkensfilet.jpg' },
-            { name: 'Varkensgehakt', price: '€4,99', description: 'Vers varkensgehakt per 500g', image: 'https://www.example.com/varkensgehakt.jpg' },
-            { name: 'Varkensrib', price: '€8,99', description: 'Verse varkensrib per 500g', image: 'https://www.example.com/varkensrib.jpg' },
-            { name: 'Varkensschnitzel', price: '€6,49', description: 'Verse varkensschnitzel per 500g', image: 'https://www.example.com/varkensschnitzel.jpg' },
-            { name: 'Varkensrollade', price: '€9,99', description: 'Verse varkensrollade per 500g', image: 'https://www.example.com/varkensrollade.jpg' },
-            { name: 'Varkensworst', price: '€5,99', description: 'Verse varkensworst per 500g', image: 'https://www.example.com/varkensworst.jpg' }
-        ]}
     ];
 
     return (
@@ -64,32 +43,32 @@ export default function SubCategorieen() {
                     </button>
                 </div>
                 <div className="relative mt-1 p-1 border rounded-lg cursor-pointer" onClick={() => window.location.href='/product'}>
-                    <img src="https://vandevenvers.nl/wp-content/uploads/2024/06/Banner-Homepage-01.jpg" alt="Vleeswaren" className="w-full h-32 object-cover rounded-lg" />
+                    <img src="https://vandevenvers.nl/wp-content/uploads/2024/06/Banner-Homepage-01.jpg" alt="Vleeswaren" className="w-full h-24 object-cover rounded-lg" />
                     <div className="absolute top-0 left-0 m-4">
-                        <h2 className="text-xl font-bold text-white bg-black bg-opacity-50 px-4 py-2 rounded">Vleeswaren</h2>
+                        <h2 className="text-xl font-bold text-white bg-black bg-opacity-50 px-4 py-6 rounded">Vleeswaren</h2>
                     </div>
                 </div>
 
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="mt-0 flex flex-col space-y-0">
                     {subcategories.map(subcategory => (
-                        <div key={subcategory.id} className="p-4 border rounded-lg flex flex-col items-center space-y-2 cursor-pointer">
-                            <img src={subcategory.image} alt={subcategory.name} className="w-full h-32 object-cover rounded-lg" />
-                            <div>
-                                <h2 className="text-xl font-bold">{subcategory.name}</h2>
+                        <div key={subcategory.id} className="flex flex-col md:flex-row">
+                            <div className="p-2 border rounded-lg flex flex-col items-center space-y-2 cursor-pointer w-full md:w-1/4 lg:w-1/5">
+                                <img src={subcategory.image} alt={subcategory.name} className="w-full h-16 object-cover rounded-lg" />
+                                <div>
+                                    <h2 className="text-lg font-bold">{subcategory.name}</h2>
+                                </div>
+                            </div>
+                            <div className="mt-4 md:mt-0 md:ml-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+                                {subcategory.products.map((product) => (
+                                    <div key={product.id} className="p-2 border rounded-lg flex flex-col space-y-2">
+                                        <img src={product.image} alt={product.name} className="w-full h-16 object-cover rounded-lg" />
+                                        <h3 className="text-lg font-semibold">{product.name}</h3>
+                                        <p className="text-gray-600">{product.price}</p>
+                                        <p className="text-gray-600 text-xs">{product.description}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    ))}
-                </div>
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    {subcategories.map(subcategory => (
-                        subcategory.products.map((product, index) => (
-                            <div key={index} className="p-4 border rounded-lg flex flex-col space-y-2">
-                                <img src={product.image} alt={product.name} className="w-full h-32 object-cover rounded-lg" />
-                                <h3 className="text-lg font-semibold">{product.name}</h3>
-                                <p className="text-gray-600">{product.price}</p>
-                                <p className="text-gray-600">{product.description}</p>
-                            </div>
-                        ))
                     ))}
                 </div>
                 <div className="mt-20 p-8 border rounded-lg flex items-center justify-center space-x-8 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
