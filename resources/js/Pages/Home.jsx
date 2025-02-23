@@ -1,7 +1,26 @@
 import Header from '@/Components/Header';
 import { Head } from '@inertiajs/react';
 
+
 export default function Home() {
+    const aanbiedingen = [
+        {
+            naam: 'Robijn 4 voor 2!',
+            beschrijving: 'Ongelofelijk 😉',
+            afbeelding: 'https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Seizoensaanbiedingen/SA02/Seizoen_Week_04-08_16.png'
+        },
+        {
+            naam: 'Page nu 1 + 1',
+            beschrijving: 'Ga je vaak naar het toilet? Dan is deze aanbieding voor jouw!',
+            afbeelding: 'https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Weekaanbiedingen/Week%2008/Weekaanbiedingen-Week-08_02.png'
+        },
+        {
+            naam: 'Nog een paar gram vet nodig?',
+            beschrijving: 'Eet hier veel van en je zal resultaat zien.',
+            afbeelding: 'https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Weekaanbiedingen/Week%2008/Weekaanbiedingen-Week-08_06.png'
+        }
+    ];
+
     return (
         <>
             <Head title="Home" />
@@ -10,45 +29,20 @@ export default function Home() {
                     <Header />
                 </header>
                 <main>
-                    <hr className="my-2" />
-                    <div className="flex items-center py-0 mt-1">
-                        <input 
-                            type="text" 
-                            placeholder="Zoek een product" 
-                            className="border rounded-full px-4 py-0 w-1/5 text-xs sm:text-sm md:text-base"
-                        />
-                        <button className="ml-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
-                            </svg>
-                        </button>
-                    </div>
                     <div className="mt-2 p-4 border rounded-lg flex items-center cursor-pointer" onClick={() => window.location.href='/categorieen'}>
                         <img src="https://www.jumbo.com/dam/inspiratie/boodschappenpakket/Boodschappenpakket-Header-2000x354-Laatste-week.jpg" alt="Promotion" className="w-full rounded-lg" />
                     </div>
                                 
                     <div className="mt-0 flex justify-between space-x-0">
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
-                            <div>
-                                <h2 className="text-xl font-bold">Robijn 4 voor 2!</h2>
-                                <p className="text-gray-600">Ongelofelijk 😉</p>
+                        {aanbiedingen.map((aanbieding, index) => (
+                            <div key={index} className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
+                                <div>
+                                    <h2 className="text-xl font-bold">{aanbieding.naam}</h2>
+                                    <p className="text-gray-600">{aanbieding.beschrijving}</p>
+                                </div>
+                                <img src={aanbieding.afbeelding} alt="Promotion" className="w-1/4 rounded-lg" />
                             </div>
-                            <img src="https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Seizoensaanbiedingen/SA02/Seizoen_Week_04-08_16.png" alt="Promotion" className="w-1/4 rounded-lg" />
-                        </div>
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
-                            <div>
-                                <h2 className="text-xl font-bold">Page nu 1 + 1</h2>
-                                <p className="text-gray-600">Ga je vaak naar het toilet? Dan is deze aanbieding voor jouw!</p>
-                            </div>
-                            <img src="https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Weekaanbiedingen/Week%2008/Weekaanbiedingen-Week-08_02.png" alt="Promotion" className="w-1/4 rounded-lg" />
-                        </div>
-                        <div className="p-4 border rounded-lg flex items-center space-x-4 cursor-pointer w-1/3" onClick={() => window.location.href='/categorieen'}>
-                            <div>
-                                <h2 className="text-xl font-bold">Nog een paar gram vet nodig?</h2>
-                                <p className="text-gray-600">Eet hier veel van en je zal resultaat zien.</p>
-                            </div>
-                            <img src="https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2025/Weekaanbiedingen/Week%2008/Weekaanbiedingen-Week-08_06.png" alt="Promotion" className="w-1/4 rounded-lg" />
-                        </div>
+                        ))}
                     </div>
                     <div className="mt-4 p-10 border rounded-lg flex items-center space-x-4 cursor-pointer" onClick={() => window.location.href='/onderconstructie'}>
                         <div>
