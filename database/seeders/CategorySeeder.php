@@ -16,10 +16,10 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             ['name' => 'Groenten en Fruit', 'img_url' => 'https://www.schumacher-packaging.com/thumbor/lsORGmtdwZuCXSNbHsy8_lIqZE8=/1920x/www.schumacher-packaging.com/fileadmin/user_upload/home/01_produkte-loesungen/branchenloesungen-packaging/lebensmittel/obst-gemuese/header/header-obst-gemuese-1920x768px.jpg%3F1613151707'],
-            ['name' => 'Zuivel en Eieren', 'img_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCcRsc9qbK7I0xoN6fruycOoa1jwi6cew2QQ&s'],
-            ['name' => 'Vlees en Vis', 'img_url' => 'https://www.lovap.be/storage/images/web/86586cff4174f196288486d83fac8f31-1621945259.jpg'],
+            ['name' => 'Zuivel en Eieren', 'img_url' => 'https://img.freepik.com/vrije-photo/glazen-kan-met-melk-ei-en-deegroller-op-houten-tafel_114579-18238.jpg?t=st=1740515968~exp=1740519568~hmac=ffaad8b586499e92cc485f4d8b9242f6bf14bfe2458c34c7389dcc2d2848578e&w=1380'],
+            ['name' => 'Vlees en Vis', 'img_url' => 'https://www.cooklikeachef.nl/img/sliders/255_9ff741ef83d5051e5ff34313e830d446.jpg'],
             ['name' => 'Brood en Banket', 'img_url' => 'https://www.handtmann.nl/wp-content/uploads/Brood-banket.jpg'],
-            ['name' => 'Dranken', 'img_url' => 'https://www.wijnvoordeel.nl/media/catalog/product/g/e/georges_clement_champagne_brut_probeerpakket_1.png?quality=95&fit=bounds&height=400&width=500&bg-color=FFF'],
+            ['name' => 'Dranken', 'img_url' => 'https://ls.codetech.nl/shops/305710/files/469753746/image.jpg'],
             ['name' => 'Snacks en Snoep', 'img_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAU6FSS5UeiP3PpUnzjyTNbPMNdJNiRwMyg&s'],
             ['name' => 'Diepvries', 'img_url' => 'https://www.ilgiornale.nl/wp-content/uploads/pizza-supermarkt-test-revieuw-beoordleing-smaak-beste-lekkerste-oetker-AH-jumbo-JPG.jpg'],
             ['name' => 'Kruiden', 'img_url' => 'https://media.s-bol.com/2g4ZqOQ71AKN/550x397.jpg'],

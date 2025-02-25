@@ -27,7 +27,7 @@ export default function SubCategorieen({ id }) {
                 <div className="relative mt-1 p-1 border rounded-lg cursor-pointer">
                     <img src={category.img_url} alt={category.name} className="w-full h-24 object-cover rounded-lg" />
                     <div className="absolute top-0 left-0 m-4">
-                        <h2 className="text-xl font-bold text-white bg-black bg-opacity-50 px-4 py-6 rounded">Vleeswaren</h2>
+                        <h2 className="text-xl font-bold text-white bg-black bg-opacity-50 px-4 py-6 rounded">{category.name}</h2>
                     </div>
                 </div>
 
