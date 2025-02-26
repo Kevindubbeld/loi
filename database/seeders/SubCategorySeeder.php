@@ -47,7 +47,7 @@ class SubCategorySeeder extends Seeder
             [
                 'category_id' => $groentenEnFruitCategory->id,
                 'name' => 'Bananen',
-                'img_url' => 'https://image.parool.nl/234310914/width/2480/waarom-zijn-appels-van-dichtbij-toch-duurder',
+                'img_url' => 'https://img.freepik.com/premium-vector/banana-logo-icon-design_586739-3058.jpg?w=740',
             ],
             [
                 'category_id' => $zuivelEnEierenCategory->id,
