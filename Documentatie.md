@@ -1,338 +1,270 @@
-# Overzicht van Aangepaste Code
+# Overzicht van de geschreven Code
 
-Dit document beschrijft alle aangepaste code die is aangemaakt voor het LOI project.
+Hier is een samenvatting van de geschreven code voor het LOI project om een webshop-frontend te maken:
+### 1. **Homepagina (Home.jsx):**
+- **Doel:** Dit is de hoofdpagina van de webshop die klanten verwelkomt en verschillende promoties toont.
+- **Functionaliteit:**
+    - Bevat een promotie-banner met een afbeelding die naar de categorieënpagina leidt.
+    - Toont een lijst met aanbiedingen, inclusief naam, beschrijving en afbeelding. Elke aanbieding leidt naar de categorieënpagina.
+    - Een nieuwssectie benadrukt een belangrijke boodschap en biedt een knop naar een externe pagina.
+    - De component bevat een header, footer en social media-secties voor navigatie en branding.
 
-## Controllers
+### 2. **Categorieënpagina (Categorieen.jsx):**
+- **Doel:** Overzicht van alle categorieën in de webshop.
+- **Functionaliteit:**
+    - Toont een rasterweergave van alle beschikbare categorieën, elk met een afbeelding en naam.
+    - Elke categorie is klikbaar en leidt naar de subcategorieënpagina voor de geselecteerde categorie.
+    - De component integreert een header, footer en social media-secties.
 
-### ProductController
+### 3. **Subcategorieënpagina (SubCategorieen.jsx):**
+- **Doel:** Overzicht van subcategorieën en producten binnen een geselecteerde categorie.
+- **Functionaliteit:**
+    - Haalt de details van een specifieke categorie op via een API-oproep.
+    - Toont een banner met de naam en afbeelding van de geselecteerde categorie.
+    - Toont een lijst van subcategorieën, inclusief naam en afbeelding.
+    - Binnen elke subcategorie worden producten weergegeven met details zoals naam, prijs, korte omschrijving en afbeelding.
+    - Producten zijn klikbaar en leiden naar de productpagina.
+    - Bevat ook een header, footer en social media-secties.
 
-De `ProductController` bevat methoden om een lijst van producten op te halen en de details van een specifiek product weer te geven.
+### 4. **Productpagina (Product.jsx):**
+- **Doel:** Weergave van de details van een specifiek product.
+- **Functionaliteit:**
+    - Haalt productgegevens en de bijbehorende categorie op via API-oproepen.
+    - Toont productdetails, zoals naam, prijs, korte en lange beschrijving, en afbeelding.
+    - Toont de bijbehorende categorie als een banner waarmee de gebruiker terug kan navigeren naar de subcategorieënpagina.
+    - Biedt een knop om het product toe te voegen (mogelijke winkelwagenfunctionaliteit).
+    - Bevat een header, footer en social media-secties.
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/app/Http/Controllers/ProductController.php
-<?php
+### Algemene Componenten:
+- **Header:** Bovenaan weergegeven navigatie-element dat in alle pagina's is opgenomen.
+- **Footer:** Onderaan weergegeven component met algemene details of links.
+- **SocialMedia:** Sectie voor social media-navigatie, opgenomen in elke pagina voor strategische branding.
 
-namespace App\Http\Controllers;
+### Opm.:
+De functionaliteit van elke pagina hangt samen, waarbij de gebruiker van categorieën naar subcategorieën en vervolgens naar productdetails navigeert, met een duidelijke focus op gebruiksvriendelijkheid en visuele aantrekkingskracht.
 
-use App\Models\Product;
 
-class ProductController extends Controller
-{
-    /**
-     * Return the list of products.
-     *
-     * @return array
-     */
-    public function index(): array
-    {
-        return Product::all()->toArray();
-    }
 
-    /**
-     * Return the details of a specific product.
-     *
-     * @param int $id
-     * @return Product|null
-     */
-    public function show(int $id): ?Product
-    {
-        $product = Product::find($id);
+Hier is een korte samenvatting van de functionaliteit van het backend op basis van de bijgevoegde informatie:
+### **Categorieën Backend:**
+1. **CategoryController**
+    - **Lijst van categorieën ophalen:**
+      Via de `index()`-methode wordt een lijst van alle categorieën vanuit de database opgehaald.
+    - **Details van één categorie ophalen:**
+      De `show()`-methode retourneert de details van een specifieke categorie (op basis van een ID).
+      Het resultaat bevat ook gekoppelde subcategorieën en hun producten, dankzij een relatie tussen subcategorieën en producten.
 
-        if (!$product) {
-            return null;
-        }
+### **Producten Backend:**
+1. **ProductController**
+    - **Lijst van producten ophalen:**
+      De `index()`-methode retourneert een lijst van alle producten in de database.
+    - **Details van één product ophalen:**
+      De `show()`-methode retourneert de details van een specifiek product op basis van een opgegeven ID. Als het product niet wordt gevonden, wordt `null` teruggegeven.
 
-        return $product;
-    }
-}
-```
+### **Requestvalidaties:**
+1. **ListCategorieenRequest**
+    - Hoewel er momenteel geen actieve validatieregels zijn, is deze request class voorbereid om validatie toe te passen op verzoeken voor lijstfunctionaliteiten, zoals de aanwezigheid en de geldigheid van een `category_id`.
 
-### CategoryController
+### **Algemene Functionaliteit:**
+- **Categorie entiteit:** Voor het beheren en ophalen van categorieën en hun gerelateerde data (zoals subcategorieën en producten).
+- **Product entiteit:** Voor het beheren en ophalen van productgegevens.
+- **Database interacties:** Het gebruik van database queries en Eloquent-relaties voor het ophalen van data.
+- **Validatie:** Een voorbereid validatiesysteem om verzoeken te beveiligen of te controleren, hoewel sommige functies nog niet actief zijn.
 
-De `CategoryController` bevat methoden om een lijst van categorieën op te halen en de details van een specifieke categorie weer te geven, inclusief de subcategorieën en producten.
+Het backend is ontworpen om een API-achtige structuur te bieden voor de webshop, waarbij het data zoals categorieën, subcategorieën en producten structureel ophaalt en filtert voor gebruik aan de frontend.
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/app/Http/Controllers/CategoryController.php
-<?php
 
-namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Models\SubCategory;
 
-class CategoryController extends Controller
-{
-    /**
-     * Return the list of categories.
-     *
-     * @return array
-     */
-    public function index(): array
-    {
-        return DB::table('categories')->get()->toArray();
-    }
+Hier is een korte beschrijving van de domeinobjecten:
+### **1. Category**
+- **Beschrijving:** Vertegenwoordigt een hoofdcategorie waartoe subcategorieën behoren.
+- **Velden:**
+    - `name`: Naam van de categorie.
+    - `img_url`: URL naar een afbeelding die de categorie visueel weergeeft.
 
-    /**
-     * Return the details of a specific category.
-     *
-     * @param int $id
-     * @return array|null
-     */
-    public function show(int $id): ?array
-    {
-        $category = DB::table('categories')->where('id', $id)->first();
-        if ($category) {
-            $subCategories = SubCategory::with('products')->where('category_id', $id)->get();
-            $category->subcategories = $subCategories->toArray();
-            return (array) $category;
-        }
-        return null;
-    }
-}
-```
+- **Relaties:**
+    - Heeft een _one-to-many_ relatie met **SubCategory** (een categorie bevat meerdere subcategorieën).
 
-## Routes
+### **2. SubCategory**
+- **Beschrijving:** Vertegenwoordigt een subcategorie die gekoppeld is aan een hoofdcategorie en producten bevat.
+- **Velden:**
+    - `category_id`: Verwijzing naar de bijbehorende hoofdcategorie.
+    - `name`: Naam van de subcategorie.
+    - `img_url`: URL naar een afbeelding die de subcategorie visueel weergeeft.
 
-### Web Routes
+- **Relaties:**
+    - **Belongs to** een **Category** (een subcategorie is gekoppeld aan één categorie).
+    - Heeft een _one-to-many_ relatie met **Product** (een subcategorie bevat meerdere producten).
 
-De web routes definiëren de routes voor de verschillende pagina's van de applicatie.
+### **3. Product**
+- **Beschrijving:** Vertegenwoordigt een individueel product dat wordt verkocht in de webshop.
+- **Velden:**
+    - `sub_category_id`: Verwijzing naar de bijbehorende subcategorie.
+    - `name`: Naam van het product.
+    - `short_description`: Korte beschrijving van het product.
+    - `long_description`: Gedetailleerde beschrijving van het product.
+    - `price`: Prijs van het product.
+    - `quantity`: Beschikbare hoeveelheid op voorraad.
+    - `img_url`: URL naar een afbeelding die het product visueel weergeeft.
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/routes/web.php
-<?php
+- **Relaties:**
+    - **Belongs to** een **SubCategory** (een product is gekoppeld aan één subcategorie).
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+### **Samenvatting van Relaties tussen Domeinobjecten:**
+- Een **Category** bevat meerdere **SubCategory** objecten.
+- Een **SubCategory** bevat meerdere **Product** objecten.
+- Een **Product** behoort tot één specifieke **SubCategory**.
+- Een **SubCategory** behoort tot één specifieke **Category**.
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Deze hiërarchie structureert het domein en biedt een overzichtelijke manier om categorieën, subcategorieën en producten in een webshop te beheren.
 
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/categorieen', function () {
-    return Inertia::render('Categorieen');
-});
 
-Route::get('/subcategorieen/{id}', function ($id) {
-    return Inertia::render('SubCategorieen', ['id' => $id]);
-});
+### **Samenvatting van de Database Structuur**
+De database bevat drie hoofdtabeltypen in een hiërarchische structuur, ontworpen voor een webshopomgeving:
+#### **1. Tabel: `categories`**
+- **Beschrijving:** Houdt hoofdcategorieën bij, zoals _Groenten en Fruit_ of _Dranken_.
+- **Belangrijkste velden:**
+    - `id`: Primaire sleutel.
+    - `name`: Naam van de categorie.
+    - `img_url`: URL naar een afbeelding voor de categorie.
 
-Route::get('/product/{id}', function ($id) {
-    return Inertia::render('Product', ['id' => $id]);
-});
+- **Relatie:**
+    - Heeft een _one-to-many_ relatie met `sub_categories`.
 
-Route::get('/onderconstructie', function () {
-    return Inertia::render('Onderconstructie');
-});
+#### **2. Tabel: `sub_categories`**
+- **Beschrijving:** Houdt subcategorieën bij die gekoppeld zijn aan een hoofdcategorie, zoals "Kaas" (behorende bij de categorie "Zuivel en Eieren").
+- **Belangrijkste velden:**
+    - `id`: Primaire sleutel.
+    - `category_id`: Foreign key naar `categories`.
+    - `name`: Naam van de subcategorie.
+    - `img_url`: URL naar een afbeelding voor de subcategorie.
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+- **Relatie:**
+    - Heeft een _many-to-one_ relatie met `categories`.
+    - Heeft een _one-to-many_ relatie met `products`.
 
-require __DIR__.'/auth.php';
-require __DIR__.'/api.php';
-```
+#### **3. Tabel: `products`**
+- **Beschrijving:** Houdt producten bij zoals "Kipfilet" of "Appels".
+- **Belangrijkste velden:**
+    - `id`: Primaire sleutel.
+    - `sub_category_id`: Foreign key naar `sub_categories`.
+    - `category_id`: Foreign key naar `categories` (toegevoegd voor efficiëntere queries).
+    - `name`: Naam van het product.
+    - `short_description`: Korte productomschrijving.
+    - `long_description`: Uitgebreide productomschrijving.
+    - `price`: Prijs van het product.
+    - `quantity`: Beschikbare hoeveelheid op voorraad.
+    - `img_url`: URL naar een afbeelding van het product.
 
-### API Routes
+- **Relatie:**
+    - Heeft een _many-to-one_ relatie met zowel `sub_categories` als `categories` (via buitenlandse sleutels).
 
-De API routes definiëren de routes voor het ophalen van categorieën en producten via de API.
+### **Overzicht van Relaties**
+- **Hoofdrelaties:**
+    - Een hoofdcategorie (**category**) kan meerdere subcategorieën (**sub_categories**) bevatten.
+    - Een subcategorie (**sub_category**) kan meerdere producten (**products**) bevatten.
+    - Een product behoort tot één subcategorie en, via een directe koppeling, ook tot één hoofdcategorie.
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/routes/api.php
-<?php
+### **Feeders: Seeder Overzicht**
+#### **1. `CategorySeeder`**
+- **Beschrijving:** Voegt een reeks basiscategorieën in zoals:
+    - _Groenten en Fruit, Zuivel en Eieren, Dranken_ enz.
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Route;
+- **Voorbeeld:** Een categorie zoals "Groenten en Fruit" wordt toegevoegd met bijbehorende afbeelding.
 
-Route::get('/api/category', [CategoryController::class, 'index']);
-Route::get('/api/category/{id}', [CategoryController::class, 'show']);
-Route::get('/api/product', [ProductController::class, 'index']);
-Route::get('/api/product/{id}', [ProductController::class, 'show']);
-```
+#### **2. `SubCategorySeeder`**
+- **Beschrijving:** Voegt subcategorieën in die gekoppeld zijn aan de hoofdcategorieën.
+    - _Voorbeeld:_ "Kaas" is een subcategorie van "Zuivel en Eieren", en "Pizza" hoort bij "Diepvries".
 
-## Seeders
+- **Procedure:** Verwijst naar een bestaande categorie in de `categories`-tabel om `category_id` in te vullen.
 
-### CategorySeeder
+#### **3. `ProductSeeder`**
+- **Beschrijving:** Voegt specifieke producten in, gekoppeld aan subcategorieën en hun hoofdcategorieën.
+    - _Voorbeeld:_ Het product _Kipfilet_ wordt gekoppeld aan "Kippenvlees" (subcategorie) en daarmee indirect aan "Vlees en Vis" (hoofdcategorie).
 
-De `CategorySeeder` vult de `categories` tabel met voorbeeldgegevens.
+- **Procedure:**
+    - Zoekt een bestaande `sub_category` op via de naam.
+    - Verwijst naar `sub_category_id` en vult automatisch `category_id` in.
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/database/seeders/CategorySeeder.php
-<?php
+### **Conclusie**
+De database is hiërarchisch georganiseerd om een webshop efficiënt te ondersteunen:
+1. **Categorieën** bieden productstructuur op hoog niveau.
+2. **Subcategorieën** verfijnen deze structuur.
+3. **Producten** leveren de daadwerkelijke inhoud voor de webshop.
 
-namespace Database\Seeders;
+De seeders zorgen voor een basisvulling van categorieën, subcategorieën en producten, waarmee een goed gestructureerde basisdatabase ontstaat voor verdere ontwikkeling of presentatie.
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class CategorySeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        DB::table('categories')->insert([
-            ['name' => 'Groenten en Fruit', 'img_url' => 'https://www.schumacher-packaging.com/thumbor/lsORGmtdwZuCXSNbHsy8_lIqZE8=/1920x/www.schumacher-packaging.com/fileadmin/user_upload/home/01_produkte-loesungen/branchenloesungen-packaging/lebensmittel/obst-gemuese/header/header-obst-gemuese-1920x768px.jpg%3F1613151707'],
-            ['name' => 'Zuivel en Eieren', 'img_url' => 'https://img.freepik.com/vrije-photo/glazen-kan-met-melk-ei-en-deegroller-op-houten-tafel_114579-18238.jpg?t=st=1740515968~exp=1740519568~hmac=ffaad8b586499e92cc485f4d8b9242f6bf14bfe2458c34c7389dcc2d2848578e&w=1380'],
-            ['name' => 'Vlees en Vis', 'img_url' => 'https://www.cooklikeachef.nl/img/sliders/255_9ff741ef83d5051e5ff34313e830d446.jpg'],
-            ['name' => 'Brood en Banket', 'img_url' => 'https://www.handtmann.nl/wp-content/uploads/Brood-banket.jpg'],
-            ['name' => 'Dranken', 'img_url' => 'https://ls.codetech.nl/shops/305710/files/469753746/image.jpg'],
-            ['name' => 'Snacks en Snoep', 'img_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAU6FSS5UeiP3PpUnzjyTNbPMNdJNiRwMyg&s'],
-            ['name' => 'Diepvries', 'img_url' => 'https://www.ilgiornale.nl/wp-content/uploads/pizza-supermarkt-test-revieuw-beoordleing-smaak-beste-lekkerste-oetker-AH-jumbo-JPG.jpg'],
-            ['name' => 'Kruiden', 'img_url' => 'https://media.s-bol.com/2g4ZqOQ71AKN/550x397.jpg'],
-            ['name' => 'Non-Food', 'img_url' => 'https://www.mawsforfinefood.co.uk/media/catalog/category/non_food_LOGO.jpg'],
-            ['name' => 'Babyvoedsel', 'img_url' => 'https://media.istockphoto.com/id/530731523/nl/foto/feeding.jpg?s=612x612&w=0&k=20&c=ewYoKl_Rlxl062-nXi94kBVLRXxy3Ovje2VKpX-k7W4='],
-            ['name' => 'Huisdieren', 'img_url' => 'https://d147a5vd7kzml6.cloudfront.net/img/appeltern_nl/251877/3005x2000/resize:normal/dieren_en_huisdieren_in_de_tuin.jpg'],
-            ['name' => 'Gezondheid en Verzorging', 'img_url' => 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR68DEOqUyhc2nXghQayLmiGsPJY3w0eG4oKSQ2uI2xdhVmF2a53rQxzKXTmEyBpuG8-lgkXAyi0SmRD6TICY0ZPaGU1r_OCagEbP78wYEF7AE-t0VFObzRG2EGD0A1xWHepntLCmGOveE&usqp=CAc']
-        ]);
-    }
-}
-```
 
-### SubCategorySeeder
+Hier is een overzicht van de gebruikte libraries, onderverdeeld in categorieën op basis van hun functionaliteit:
+### **Frontend Frameworks en Bibliotheken**
+1. **React** (`react`, `react-dom`) - Versie 18.2.0
+    - **Beschrijving**: Een populaire JavaScript-bibliotheek voor het bouwen van gebruikersinterfaces en componentgebaseerde applicaties.
+    - **Gebruik**: Voor het maken van dynamische en herbruikbare UI-componenten en het renderen van de applicatie op de DOM.
 
-De `SubCategorySeeder` vult de `sub_categories` tabel met voorbeeldgegevens.
+2. **React Router Dom** (`react-router-dom`) - Versie 7.2.0
+    - **Beschrijving**: Een declaratieve routeringbibliotheek voor React.
+    - **Gebruik**: Voor het beheren van client-side routes in SPA's (Single Page Applications).
 
-```php
-// filepath: /Users/kevindubbeld/Projects/laravel-projects/LOI/database/seeders/SubCategorySeeder.php
-<?php
+### **React Specifieke Integraties**
+1. **@inertiajs/react** - Versie 2.0.0
+    - **Beschrijving**: React-binding voor Inertia.js.
+    - **Gebruik**: Voor server-side rendering en het maken van full-stack SPA's die React combineren met backend frameworks (zoals Laravel).
 
-namespace Database\Seeders;
+2. **@inertiajs/progress** - Versie 0.1.2
+    - **Beschrijving**: Maakt een voortgangsbalk (progress bar) mogelijk voor Inertia.js navigaties.
+    - **Gebruik**: Geeft visuele feedback tijdens het laden van nieuwe pagina's.
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use App\Models\Category;
+3. **@headlessui/react** - Versie 2.0.0
+    - **Beschrijving**: Onopgemaakte toegankelijkheidscomponenten gebouwd voor React.
+    - **Gebruik**: Voor het bouwen van toegankelijke UI-componenten zoals dialoogvensters en dropdowns zonder CSS-styling.
 
-class SubCategorySeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $vleesEnVisCategory = Category::where('name', 'Vlees en Vis')->first();
-        $groentenEnFruitCategory = Category::where('name', 'Groenten en Fruit')->first();
-        $zuivelEnEierenCategory = Category::where('name', 'Zuivel en Eieren')->first();
-        $broodEnBanketCategory = Category::where('name', 'Brood en Banket')->first();
-        $drankenCategory = Category::where('name', 'Dranken')->first();
-        $snacksEnSnoepCategory = Category::where('name', 'Snacks en Snoep')->first();
-        $diepvriesCategory = Category::where('name', 'Diepvries')->first();
-        $kruidenCategory = Category::where('name', 'Kruiden')->first();
-        $nonFoodCategory = Category::where('name', 'Non-Food')->first();
-        $babyvoedselCategory = Category::where('name', 'Babyvoedsel')->first();
-        $huisdierenCategory = Category::where('name', 'Huisdieren')->first();
-        $gezondheidEnVerzorgingCategory = Category::where('name', 'Gezondheid en Verzorging')->first();
+### **Style en CSS Tools**
+1. **Tailwind CSS** (`tailwindcss`) - Versie 3.2.1
+    - **Beschrijving**: Een utility-first CSS-framework voor snel stylen.
+    - **Gebruik**: Voor responsieve en gestileerde ontwerpen via voorgedefinieerde klassen.
 
-        DB::table('sub_categories')->insert([
-            [
-                'category_id' => $vleesEnVisCategory->id,
-                'name' => 'Kippenvlees',
-                'img_url' => 'https://png.pngtree.com/png-clipart/20230812/original/pngtree-fried-chicken-icon-logo-illustration-delicious-wings-lunch-vector-picture-image_10499362.png',
-            ],
-            [
-                'category_id' => $vleesEnVisCategory->id,
-                'name' => 'Rundervlees',
-                'img_url' => 'https://img.freepik.com/premium-vector/rundvlees-logo-ontwerp-inspiratie-met-badges-en-vintage-stijl_139869-36.jpg?w=1480',
-            ],
-            [
-                'category_id' => $groentenEnFruitCategory->id,
-                'name' => 'Appels',
-                'img_url' => 'https://image.parool.nl/234310914/width/2480/waarom-zijn-appels-van-dichtbij-toch-duurder',
-            ],
-            [
-                'category_id' => $groentenEnFruitCategory->id,
-                'name' => 'Bananen',
-                'img_url' => 'https://img.freepik.com/premium-vector/banana-logo-icon-design_586739-3058.jpg?w=740',
-            ],
-            [
-                'category_id' => $zuivelEnEierenCategory->id,
-                'name' => 'Melk',
-                'img_url' => 'https://www.shutterstock.com/image-vector/natural-milk-symbol-logo-pouring-260nw-405290065.jpg',
-            ],
-            [
-                'category_id' => $zuivelEnEierenCategory->id,
-                'name' => 'Kaas',
-                'img_url' => 'https://img.freepik.com/premium-vector/kaas-eten-logo-merk-product-cartoon-stijl-vector-illustratie-supermarkt-logo-bewerkbare-tekst_521317-1165.jpg',
-            ],
-            [
-                'category_id' => $broodEnBanketCategory->id,
-                'name' => 'Brood',
-                'img_url' => 'https://img.freepik.com/premium-vector/vectorillustratie-van-het-ontwerp-van-het-broodlogo_1249925-3642.jpg',
-            ],
-            [
-                'category_id' => $broodEnBanketCategory->id,
-                'name' => 'Gebak',
-                'img_url' => 'https://i.etsystatic.com/41769818/r/il/ef024f/5453017465/il_794xN.5453017465_3rph.jpg',
-            ],
-            [
-                'category_id' => $drankenCategory->id,
-                'name' => 'Frisdrank',
-                'img_url' => 'https://www.creativefabrica.com/wp-content/uploads/2019/09/26/Soda-drink-filled-line-icon-logo-design-by-graphicrun123-580x386.jpg',
-            ],
-            [
-                'category_id' => $drankenCategory->id,
-                'name' => 'Sap',
-                'img_url' => 'https://img.freepik.com/premium-vector/unique-orange-juice-logo-design_301434-36.jpg',
-            ],
-            [
-                'category_id' => $snacksEnSnoepCategory->id,
-                'name' => 'Chips',
-                'img_url' => 'https://static.vecteezy.com/ti/gratis-vector/p1/47929385-logo-aardappel-chips-voedsel-en-tussendoortje-logo-met-gemakkelijk-aardappel-tekenfilm-uniek-voedsel-tussendoortje-chips-bedrijf-identiteit-icoon-geisoleerd-aan-wit-achtergrond-vector.jpg',
-            ],
-            [
-                'category_id' => $snacksEnSnoepCategory->id,
-                'name' => 'Chocolade',
-                'img_url' => 'https://static.vecteezy.com/ti/gratis-vector/p1/7909755-premium-chocolade-logo-badge-concept-vector.jpg',
-            ],
-            [
-                'category_id' => $diepvriesCategory->id,
-                'name' => 'Pizza',
-                'img_url' => 'https://img.freepik.com/premium-vector/italiaans-pizza-logo-met-een-pizza-en-een-chef-kok-die-een-pizza-vasthoudt_850580-18.jpg?semt=ais_hybrid',
-            ],
-            [
-                'category_id' => $diepvriesCategory->id,
-                'name' => 'IJs',
-                'img_url' => 'https://img.freepik.com/premium-vector/ijs-logo_9845-160.jpg',
-            ],
-            [
-                'category_id' => $kruidenCategory->id,
-                'name' => 'Basilicum',
-                'img_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2OZYzjh_x5FbajOmptHvmv_ZgQiKbDoEDBw&s',
-            ],
-            [
-                'category_id' => $kruidenCategory->id,
-                'name' => 'Peterselie',
-                'img_url' => 'https://as2.ftcdn.net/v2/jpg/02/55/09/65/1000_F_255096564_pSBBigAkmr4LeUl5QDHQ3I0sTLPpC0Fr.jpg',
-            ],
-            [
-                'category_id' => $nonFoodCategory->id,
-                'name' => 'Schoonmaakmiddelen',
-                'img_url' => 'https://i.pinimg.com/originals/7d/94/d7/7d94d75004dfc1c8588cb83badcac35d.jpg',
-            ],
-            [
-                'category_id' => $nonFoodCategory->id,
-                'name' => 'Papierwaren',
-                'img_url' => 'https://img.freepik.com/premium-vector/papier-pictogram-logo-vector-ontwerpsjabloon_827767-3381.jpg',
-            ],
-            [
-                'category_id' => $babyvoedselCategory->id,
-                'name' => 'Babyvoeding',
-                'img_url' => 'https://i.pinimg.com/736x/e9/23/ae/e923ae91181
+2. **@tailwindcss/forms** - Versie 0.5.3
+    - **Beschrijving**: Een plugin voor Tailwind CSS die formulierstyling verbetert.
+    - **Gebruik**: Om gestandaardiseerde stijlen aan formuliervelden toe te voegen.
+
+3. **PostCSS** (`postcss`) - Versie 8.4.31
+    - **Beschrijving**: Een tool voor het transformeren van CSS met plugins.
+    - **Gebruik**: Voor het verwerken van CSS en het automatiseren van optimalisaties (wordt doorgaans samen met Tailwind CSS gebruikt).
+
+4. **Autoprefixer** - Versie 10.4.12
+    - **Beschrijving**: Een PostCSS-plugin voor het automatisch toevoegen van vendor-prefixes aan CSS.
+    - **Gebruik**: Om CSS compatibel te maken met verschillende browsers.
+
+### **Bundling en Build Tools**
+1. **Vite** (`vite`) - Versie 6.1.1
+    - **Beschrijving**: Een snelle build-tool en frontend-bundler.
+    - **Gebruik**: Voor het ontwikkelen en bundelen van de applicatie. Vite biedt snelle paginiloads en hot module replacement (HMR).
+
+2. **@vitejs/plugin-react** - Versie 1.3.2
+    - **Beschrijving**: React-specifieke plugin voor Vite.
+    - **Gebruik**: Voor ondersteuning van React-functionaliteiten binnen Vite (zoals JSX of vernieuwen zonder herladen).
+
+3. **Laravel Vite Plugin** (`laravel-vite-plugin`) - Versie 1.2.0
+    - **Beschrijving**: Integreert Vite met Laravel.
+    - **Gebruik**: Voor gebruiksvriendelijke asset-bundling in Laravel-applicaties die moderne bundlers nodig hebben.
+
+4. **Concurrently** - Versie 9.0.1
+    - **Beschrijving**: Een tool die je meerdere commando's tegelijk laat uitvoeren.
+    - **Gebruik**: Waarschijnlijk ingezet voor het gelijktijdig draaien van zowel frontend- als backend-servers tijdens de ontwikkeling.
+
+### **HTTP Request Bibliotheken**
+1. **Axios** - Versie 1.7.4
+    - **Beschrijving**: Een populaire HTTP-client voor het maken van API-aanroepen.
+    - **Gebruik**: Voor het versturen van asynchrone HTTP-verzoeken vanuit de applicatie naar de server.
+
+### **Samenvatting**
+- **Frontend en UI**: React, React Router Dom, @headlessui/react, @inertiajs/react.
+- **Styling**: Tailwind CSS, @tailwindcss/forms, PostCSS, Autoprefixer.
+- **Bundling**: Vite, @vitejs/plugin-react, Laravel Vite Plugin.
+- **API-aanroepen**: Axios.
+- **Overig**: Concurrently voor het beheren van meerdere processen tijdens ontwikkeling.
+
+Deze bibliotheken werken samen om een moderne, snelle, en schaalbare full-stack webapplicatie te bouwen, met focus op zowel ontwikkelaarservaring als eindgebruikerservaring.
